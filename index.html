@@ -1,0 +1,891 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Substation SCADA Engineer - Career Guide</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            min-height: 100vh;
+            padding: 20px;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            background: white;
+            border-radius: 20px;
+            box-shadow: 0 20px 60px rgba(0,0,0,0.3);
+            overflow: hidden;
+        }
+
+        header {
+            background: linear-gradient(135deg, #1e3c72 0%, #2a5298 100%);
+            color: white;
+            padding: 40px;
+            text-align: center;
+        }
+
+        header h1 {
+            font-size: 2.5em;
+            margin-bottom: 10px;
+        }
+
+        header p {
+            font-size: 1.2em;
+            opacity: 0.9;
+        }
+
+        .nav-tabs {
+            display: flex;
+            background: #f8f9fa;
+            border-bottom: 2px solid #dee2e6;
+            overflow-x: auto;
+        }
+
+        .nav-tab {
+            padding: 15px 25px;
+            cursor: pointer;
+            border: none;
+            background: none;
+            font-size: 16px;
+            font-weight: 600;
+            color: #495057;
+            transition: all 0.3s;
+            white-space: nowrap;
+        }
+
+        .nav-tab:hover {
+            background: #e9ecef;
+        }
+
+        .nav-tab.active {
+            background: white;
+            color: #2a5298;
+            border-bottom: 3px solid #2a5298;
+        }
+
+        .content {
+            padding: 40px;
+        }
+
+        .tab-content {
+            display: none;
+        }
+
+        .tab-content.active {
+            display: block;
+            animation: fadeIn 0.5s;
+        }
+
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(10px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        .section {
+            margin-bottom: 30px;
+        }
+
+        .section h2 {
+            color: #2a5298;
+            margin-bottom: 20px;
+            font-size: 1.8em;
+            border-left: 4px solid #667eea;
+            padding-left: 15px;
+        }
+
+        .section h3 {
+            color: #495057;
+            margin: 20px 0 10px 0;
+            font-size: 1.3em;
+        }
+
+        .card {
+            background: #f8f9fa;
+            border-radius: 10px;
+            padding: 20px;
+            margin-bottom: 20px;
+            border-left: 4px solid #667eea;
+            transition: transform 0.3s, box-shadow 0.3s;
+        }
+
+        .card:hover {
+            transform: translateX(5px);
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+        }
+
+        .skill-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 15px;
+            margin-top: 20px;
+        }
+
+        .skill-item {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            padding: 15px;
+            border-radius: 10px;
+            text-align: center;
+            font-weight: 600;
+            transition: transform 0.3s;
+        }
+
+        .skill-item:hover {
+            transform: scale(1.05);
+        }
+
+        .timeline {
+            position: relative;
+            padding-left: 40px;
+            margin-top: 20px;
+        }
+
+        .timeline::before {
+            content: '';
+            position: absolute;
+            left: 10px;
+            top: 0;
+            bottom: 0;
+            width: 3px;
+            background: #667eea;
+        }
+
+        .timeline-item {
+            position: relative;
+            margin-bottom: 30px;
+            padding-left: 20px;
+        }
+
+        .timeline-item::before {
+            content: '';
+            position: absolute;
+            left: -33px;
+            top: 5px;
+            width: 15px;
+            height: 15px;
+            border-radius: 50%;
+            background: #667eea;
+            border: 3px solid white;
+            box-shadow: 0 0 0 3px #667eea;
+        }
+
+        .timeline-item h4 {
+            color: #2a5298;
+            margin-bottom: 5px;
+        }
+
+        .timeline-item p {
+            color: #666;
+            line-height: 1.6;
+        }
+
+        .requirements-list {
+            list-style: none;
+            padding: 0;
+        }
+
+        .requirements-list li {
+            padding: 12px;
+            margin-bottom: 10px;
+            background: #f8f9fa;
+            border-radius: 5px;
+            border-left: 3px solid #667eea;
+            transition: background 0.3s;
+        }
+
+        .requirements-list li:hover {
+            background: #e9ecef;
+        }
+
+        .requirements-list li::before {
+            content: '✓';
+            color: #667eea;
+            font-weight: bold;
+            margin-right: 10px;
+        }
+
+        .salary-range {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            padding: 30px;
+            border-radius: 15px;
+            text-align: center;
+            margin: 20px 0;
+        }
+
+        .salary-range h3 {
+            color: white;
+            font-size: 2em;
+            margin-bottom: 10px;
+        }
+
+        .salary-range p {
+            font-size: 1.1em;
+            opacity: 0.9;
+        }
+
+        .benefits-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 20px;
+            margin-top: 20px;
+        }
+
+        .benefit-card {
+            background: #f8f9fa;
+            padding: 20px;
+            border-radius: 10px;
+            text-align: center;
+            transition: transform 0.3s;
+        }
+
+        .benefit-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 20px rgba(0,0,0,0.1);
+        }
+
+        .benefit-icon {
+            font-size: 2.5em;
+            margin-bottom: 10px;
+        }
+
+        .resource-link {
+            display: inline-block;
+            background: #667eea;
+            color: white;
+            padding: 10px 20px;
+            border-radius: 5px;
+            text-decoration: none;
+            margin: 5px;
+            transition: background 0.3s;
+        }
+
+        .resource-link:hover {
+            background: #5568d3;
+        }
+
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 20px 0;
+        }
+
+        th, td {
+            padding: 12px;
+            text-align: left;
+            border-bottom: 1px solid #dee2e6;
+        }
+
+        th {
+            background: #667eea;
+            color: white;
+            font-weight: 600;
+        }
+
+        tr:hover {
+            background: #f8f9fa;
+        }
+
+        .highlight {
+            background: #fff3cd;
+            padding: 15px;
+            border-radius: 5px;
+            border-left: 4px solid #ffc107;
+            margin: 15px 0;
+        }
+
+        @media (max-width: 768px) {
+            header h1 {
+                font-size: 1.8em;
+            }
+
+            .content {
+                padding: 20px;
+            }
+
+            .nav-tabs {
+                flex-wrap: nowrap;
+            }
+
+            .skill-grid, .benefits-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>⚡ Substation SCADA Engineer</h1>
+            <p>Complete Career Guide & Roadmap</p>
+        </header>
+
+        <div class="nav-tabs">
+            <button class="nav-tab active" onclick="showTab('overview')">Overview</button>
+            <button class="nav-tab" onclick="showTab('responsibilities')">Responsibilities</button>
+            <button class="nav-tab" onclick="showTab('skills')">Skills Required</button>
+            <button class="nav-tab" onclick="showTab('requirements')">Requirements</button>
+            <button class="nav-tab" onclick="showTab('career-path')">Career Path</button>
+            <button class="nav-tab" onclick="showTab('compensation')">Compensation</button>
+            <button class="nav-tab" onclick="showTab('resources')">Resources</button>
+        </div>
+
+        <div class="content">
+            <!-- Overview Tab -->
+            <div id="overview" class="tab-content active">
+                <div class="section">
+                    <h2>What is a Substation SCADA Engineer?</h2>
+                    <div class="card">
+                        <p style="line-height: 1.8; font-size: 1.1em;">
+                            A Substation SCADA Engineer leads the design, development, and delivery of Supervisory Control and Data Acquisition (SCADA) systems for high-voltage electrical substations. This role combines electrical engineering expertise with advanced control systems knowledge to ensure reliable power transmission and distribution infrastructure.
+                        </p>
+                    </div>
+                </div>
+
+                <div class="section">
+                    <h2>Key Focus Areas</h2>
+                    <div class="skill-grid">
+                        <div class="skill-item">🔌 SCADA Systems Design</div>
+                        <div class="skill-item">📡 Communications Networks</div>
+                        <div class="skill-item">⚡ High Voltage Substations</div>
+                        <div class="skill-item">🎛️ Control Systems</div>
+                        <div class="skill-item">📊 Data Management</div>
+                        <div class="skill-item">🔧 System Integration</div>
+                    </div>
+                </div>
+
+                <div class="section">
+                    <h2>Industry Context</h2>
+                    <div class="card">
+                        <h3>🌏 Australian Energy Sector</h3>
+                        <p style="line-height: 1.8;">
+                            Works with Transmission Network Service Providers (TNSPs) and AEMO (Australian Energy Market Operator) to ensure grid reliability and compliance with national energy standards. Projects involve substations ranging from 66kV to 500kV systems.
+                        </p>
+                    </div>
+                    <div class="card">
+                        <h3>🏢 Work Environment</h3>
+                        <p style="line-height: 1.8;">
+                            <strong>Remote Work:</strong> Full-time work from home setup<br>
+                            <strong>Schedule:</strong> Monday-Friday, flexible Australian day shift<br>
+                            <strong>Travel:</strong> Occasional site visits for testing and commissioning
+                        </p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Responsibilities Tab -->
+            <div id="responsibilities" class="tab-content">
+                <div class="section">
+                    <h2>Core Responsibilities</h2>
+                    
+                    <div class="card">
+                        <h3>🔧 SCADA & Communications Systems</h3>
+                        <ul class="requirements-list">
+                            <li>Lead design and development of Substation SCADA systems</li>
+                            <li>Develop communications and controls design documentation</li>
+                            <li>Create functional descriptions and electrical schematics</li>
+                            <li>Conduct bench testing and validation</li>
+                            <li>Develop Transformer AVR control solutions</li>
+                            <li>Coordinate Proof of Concept testing with TNSPs</li>
+                            <li>Manage SCADA points lists for compliance</li>
+                            <li>Implement optimization and value engineering</li>
+                        </ul>
+                    </div>
+
+                    <div class="card">
+                        <h3>📋 Engineering Design & Project Management</h3>
+                        <ul class="requirements-list">
+                            <li>Manage multiple projects simultaneously</li>
+                            <li>Oversee scoping, scheduling, and resource allocation</li>
+                            <li>Develop project controls and QA documentation</li>
+                            <li>Create innovative electrical system designs</li>
+                            <li>Conduct risk assessments and develop mitigation strategies</li>
+                            <li>Ensure project delivery within time/cost/quality objectives</li>
+                            <li>Conduct inspections and testing</li>
+                            <li>Support procurement and contract management</li>
+                        </ul>
+                    </div>
+
+                    <div class="card">
+                        <h3>🤝 Stakeholder Engagement</h3>
+                        <ul class="requirements-list">
+                            <li>Maintain relationships with clients and subcontractors</li>
+                            <li>Coordinate with construction managers</li>
+                            <li>Prepare and present project status reports</li>
+                            <li>Liaise with vendors and contractors</li>
+                            <li>Negotiate contracts with external partners</li>
+                        </ul>
+                    </div>
+
+                    <div class="card">
+                        <h3>📄 Administration & Documentation</h3>
+                        <ul class="requirements-list">
+                            <li>Manage RFI and submittal processes</li>
+                            <li>Oversee project billing and accounting</li>
+                            <li>Maintain site-based design documentation</li>
+                            <li>Coordinate design revisions</li>
+                            <li>Develop Operation & Maintenance Manuals</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Skills Tab -->
+            <div id="skills" class="tab-content">
+                <div class="section">
+                    <h2>Technical Skills</h2>
+                    
+                    <table>
+                        <thead>
+                            <tr>
+                                <th>Skill Category</th>
+                                <th>Specific Skills</th>
+                                <th>Proficiency Level</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td><strong>SCADA Systems</strong></td>
+                                <td>System design, configuration, programming, testing</td>
+                                <td>Advanced</td>
+                            </tr>
+                            <tr>
+                                <td><strong>Communication Protocols</strong></td>
+                                <td>IEC 61850, DNP3, Modbus, IEC 60870-5-104</td>
+                                <td>Advanced</td>
+                            </tr>
+                            <tr>
+                                <td><strong>AutoCAD</strong></td>
+                                <td>Electrical schematics, termination drawings</td>
+                                <td>Strong Required</td>
+                            </tr>
+                            <tr>
+                                <td><strong>High Voltage Systems</strong></td>
+                                <td>Substation design, transmission lines, protection</td>
+                                <td>Advanced</td>
+                            </tr>
+                            <tr>
+                                <td><strong>Control Systems</strong></td>
+                                <td>RTUs, PLCs, AVR systems, protection relays</td>
+                                <td>Advanced</td>
+                            </tr>
+                            <tr>
+                                <td><strong>Network Design</strong></td>
+                                <td>Fiber optics, copper, wireless communications</td>
+                                <td>Intermediate</td>
+                            </tr>
+                            <tr>
+                                <td><strong>Microsoft Office</strong></td>
+                                <td>Excel, Word, Project, Visio</td>
+                                <td>Strong Required</td>
+                            </tr>
+                            <tr>
+                                <td><strong>Testing & Commissioning</strong></td>
+                                <td>FAT, SAT, integration testing</td>
+                                <td>Advanced</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+
+                <div class="section">
+                    <h2>Soft Skills</h2>
+                    <div class="skill-grid">
+                        <div class="skill-item">👥 Leadership</div>
+                        <div class="skill-item">💬 Communication</div>
+                        <div class="skill-item">🧩 Problem Solving</div>
+                        <div class="skill-item">📊 Project Management</div>
+                        <div class="skill-item">🤝 Stakeholder Management</div>
+                        <div class="skill-item">⚖️ Decision Making</div>
+                        <div class="skill-item">📅 Time Management</div>
+                        <div class="skill-item">🎯 Attention to Detail</div>
+                    </div>
+                </div>
+
+                <div class="section">
+                    <h2>Knowledge Requirements</h2>
+                    <div class="card">
+                        <ul class="requirements-list">
+                            <li>Engineering codes and regulations (AS/NZS standards)</li>
+                            <li>TNSP and AEMO requirements and guidelines</li>
+                            <li>Electrical design best practices</li>
+                            <li>Performance standards for HV equipment</li>
+                            <li>Safety regulations and WH&S requirements</li>
+                            <li>Quality management systems</li>
+                            <li>Energy efficiency and sustainability principles</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Requirements Tab -->
+            <div id="requirements" class="tab-content">
+                <div class="section">
+                    <h2>Formal Requirements</h2>
+                    
+                    <div class="card">
+                        <h3>🎓 Education</h3>
+                        <ul class="requirements-list">
+                            <li><strong>Required:</strong> Bachelor's degree in Electrical Engineering or related field</li>
+                            <li><strong>Preferred:</strong> Master's degree in Electrical/Control Systems Engineering</li>
+                            <li><strong>Certifications:</strong> Professional Engineering (PE) or Project Management certification</li>
+                        </ul>
+                    </div>
+
+                    <div class="card">
+                        <h3>💼 Experience</h3>
+                        <ul class="requirements-list">
+                            <li><strong>Minimum:</strong> 3 years in project coordination/engineering/management</li>
+                            <li><strong>Domain:</strong> High-voltage projects (66kV and above)</li>
+                            <li><strong>Specific:</strong> SCADA systems design and implementation</li>
+                            <li><strong>Preferred:</strong> Experience with Australian TNSPs and AEMO standards</li>
+                        </ul>
+                    </div>
+
+                    <div class="card">
+                        <h3>🛠️ Technical Proficiencies</h3>
+                        <ul class="requirements-list">
+                            <li>Strong AutoCAD skills (electrical drawings)</li>
+                            <li>Microsoft Office Suite expertise</li>
+                            <li>SCADA platform experience (e.g., ABB, Siemens, GE)</li>
+                            <li>Communication protocol knowledge</li>
+                            <li>HV substation design experience</li>
+                        </ul>
+                    </div>
+
+                    <div class="card">
+                        <h3>📋 Other Requirements</h3>
+                        <ul class="requirements-list">
+                            <li>Ability to work Australian business hours</li>
+                            <li>Occasional travel availability (site visits)</li>
+                            <li>Strong English communication skills</li>
+                            <li>Commitment to professional development</li>
+                            <li>WH&S compliance understanding</li>
+                        </ul>
+                    </div>
+
+                    <div class="highlight">
+                        <strong>⚠️ Important Note:</strong> While the position is work-from-home based in the Philippines, candidates must be available during Australian business hours and may need to travel occasionally for site work.
+                    </div>
+                </div>
+            </div>
+
+            <!-- Career Path Tab -->
+            <div id="career-path" class="tab-content">
+                <div class="section">
+                    <h2>Career Progression</h2>
+                    
+                    <div class="timeline">
+                        <div class="timeline-item">
+                            <h4>Entry Level (0-2 years)</h4>
+                            <p><strong>Role:</strong> Junior SCADA Engineer / Graduate Engineer<br>
+                            <strong>Focus:</strong> Learning SCADA systems, assisting with design, documentation, basic testing<br>
+                            <strong>Salary Range:</strong> $50,000 - $70,000 AUD equivalent</p>
+                        </div>
+
+                        <div class="timeline-item">
+                            <h4>Mid Level (3-5 years)</h4>
+                            <p><strong>Role:</strong> SCADA Engineer<br>
+                            <strong>Focus:</strong> Independent project work, design leadership, stakeholder management<br>
+                            <strong>Salary Range:</strong> $80,000 - $120,000 AUD equivalent</p>
+                        </div>
+
+                        <div class="timeline-item">
+                            <h4>Senior Level (5-8 years)</h4>
+                            <p><strong>Role:</strong> Senior SCADA Engineer / Lead SCADA Engineer<br>
+                            <strong>Focus:</strong> Multiple project management, mentoring, complex system design<br>
+                            <strong>Salary Range:</strong> $120,000 - $150,000 AUD equivalent</p>
+                        </div>
+
+                        <div class="timeline-item">
+                            <h4>Principal Level (8-12 years)</h4>
+                            <p><strong>Role:</strong> Principal SCADA Engineer / SCADA Manager<br>
+                            <strong>Focus:</strong> Strategic planning, team leadership, technical authority<br>
+                            <strong>Salary Range:</strong> $150,000 - $180,000 AUD equivalent</p>
+                        </div>
+
+                        <div class="timeline-item">
+                            <h4>Executive Level (12+ years)</h4>
+                            <p><strong>Role:</strong> Engineering Manager / Director of Engineering<br>
+                            <strong>Focus:</strong> Department management, business development, organizational strategy<br>
+                            <strong>Salary Range:</strong> $180,000+ AUD equivalent</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="section">
+                    <h2>Alternative Career Paths</h2>
+                    <div class="skill-grid">
+                        <div class="skill-item">🔄 Control Systems Specialist</div>
+                        <div class="skill-item">⚡ Protection Engineer</div>
+                        <div class="skill-item">📡 Telecommunications Engineer</div>
+                        <div class="skill-item">🏗️ Project Manager</div>
+                        <div class="skill-item">💼 Technical Consultant</div>
+                        <div class="skill-item">🎓 Technical Trainer</div>
+                    </div>
+                </div>
+
+                <div class="section">
+                    <h2>Skill Development Roadmap</h2>
+                    <div class="card">
+                        <h3>Years 1-2: Foundation Building</h3>
+                        <ul class="requirements-list">
+                            <li>Master SCADA fundamentals and protocols</li>
+                            <li>Develop AutoCAD proficiency</li>
+                            <li>Learn Australian standards and TNSP requirements</li>
+                            <li>Participate in testing and commissioning</li>
+                        </ul>
+                    </div>
+                    <div class="card">
+                        <h3>Years 3-5: Expertise Development</h3>
+                        <ul class="requirements-list">
+                            <li>Lead complete project deliverables</li>
+                            <li>Obtain professional engineering certification</li>
+                            <li>Develop project management skills</li>
+                            <li>Build stakeholder relationships</li>
+                        </ul>
+                    </div>
+                    <div class="card">
+                        <h3>Years 5+: Leadership & Innovation</h3>
+                        <ul class="requirements-list">
+                            <li>Mentor junior engineers</li>
+                            <li>Drive innovation and optimization</li>
+                            <li>Manage multiple complex projects</li>
+                            <li>Contribute to industry standards</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Compensation Tab -->
+            <div id="compensation" class="tab-content">
+                <div class="section">
+                    <h2>Salary Expectations</h2>
+                    
+                    <div class="salary-range">
+                        <h3>Philippine Market (Mid-Level)</h3>
+                        <p>₱80,000 - ₱150,000 per month</p>
+                        <p style="font-size: 0.9em; margin-top: 10px;">Equivalent to $90,000 - $140,000 AUD annually</p>
+                    </div>
+
+                    <div class="highlight">
+                        <strong>💡 Note:</strong> Salaries for remote positions with Australian companies tend to be higher than local Philippine rates but may be adjusted from Australian domestic rates. Total compensation includes base salary plus benefits.
+                    </div>
+                </div>
+
+                <div class="section">
+                    <h2>Benefits Package</h2>
+                    <div class="benefits-grid">
+                        <div class="benefit-card">
+                            <div class="benefit-icon">🏠</div>
+                            <h4>Work From Home</h4>
+                            <p>Full-time remote setup</p>
+                        </div>
+                        <div class="benefit-card">
+                            <div class="benefit-icon">⏰</div>
+                            <h4>Flexible Hours</h4>
+                            <p>Australian day shift flexibility</p>
+                        </div>
+                        <div class="benefit-card">
+                            <div class="benefit-icon">📚</div>
+                            <h4>Professional Development</h4>
+                            <p>Training & certification support</p>
+                        </div>
+                        <div class="benefit-card">
+                            <div class="benefit-icon">🏥</div>
+                            <h4>Health Benefits</h4>
+                            <p>Medical insurance coverage</p>
+                        </div>
+                        <div class="benefit-card">
+                            <div class="benefit-icon">✈️</div>
+                            <h4>Travel Opportunities</h4>
+                            <p>Occasional site visits</p>
+                        </div>
+                        <div class="benefit-card">
+                            <div class="benefit-icon">🌐</div>
+                            <h4>International Exposure</h4>
+                            <p>Work with global teams</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="section">
+                    <h2>Factors Affecting Compensation</h2>
+                    <div class="card">
+                        <table>
+                            <thead>
+                                <tr>
+                                    <th>Factor</th>
+                                    <th>Impact</th>
+                                    <th>Description</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>Experience Level</td>
+                                    <td>High</td>
+                                    <td>3+ years vs 10+ years significantly affects salary</td>
+                                </tr>
+                                <tr>
+                                    <td>Certifications</td>
+                                    <td>Medium</td>
+                                    <td>PE, PMP, or specialized SCADA certifications</td>
+                                </tr>
+                                <tr>
+                                    <td>Project Complexity</td>
+                                    <td>Medium</td>
+                                    <td>Managing larger, more complex projects</td>
+                                </tr>
+                                <tr>
+                                    <td>Company Size</td>
+                                    <td>Medium</td>
+                                    <td>Multinational firms typically pay more</td>
+                                </tr>
+                                <tr>
+                                    <td>Specialized Skills</td>
+                                    <td>High</td>
+                                    <td>Rare combinations (e.g., SCADA + cybersecurity)</td>
+                                </tr>
+                                <tr>
+                                    <td>Leadership Role</td>
+                                    <td>High</td>
+                                    <td>Team management and mentoring responsibilities</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Resources Tab -->
+            <div id="resources" class="tab-content">
+                <div class="section">
+                    <h2>Learning Resources</h2>
+                    
+                    <div class="card">
+                        <h3>📚 Online Courses & Certifications</h3>
+                        <p style="margin-bottom: 15px;">Recommended platforms and courses:</p>
+                        <a href="https://www.coursera.org" class="resource-link" target="_blank">Coursera - Power Systems</a>
+                        <a href="https://www.udemy.com" class="resource-link" target="_blank">Udemy - SCADA Courses</a>
+                        <a href="https://www.linkedin.com/learning" class="resource-link" target="_blank">LinkedIn Learning</a>
+                        <a href="https://www.isa.org" class="resource-link" target="_blank">ISA - Automation Certifications</a>
+                    </div>
+
+                    <div class="card">
+                        <h3>📖 Key Standards & References</h3>
+                        <ul class="requirements-list">
+                            <li>IEC 61850 - Communication networks for substations</li>
+                            <li>IEC 60870-5-104 - Telecontrol protocols</li>
+                            <li>AS/NZS 3000 - Electrical installations</li>
+                            <li>AS 2067 - Substations and high voltage installations</li>
+                            <li>AEMO Technical Standards</li>
+                            <li>DNP3 Protocol Documentation</li>
+                        </ul>
+                    </div>
+
+                    <div class="card">
+                        <h3>🏛️ Professional Organizations</h3>
+                        <a href="https://www.engineersaustralia.org.au" class="resource-link" target="_blank">Engineers Australia</a>
+                        <a href="https://www.ieee.org" class="resource-link" target="_blank">IEEE Power & Energy Society</a>
+                        <a href="https://www.isa.org" class="resource-link" target="_blank">ISA (Automation)</a>
+                        <a href="https://www.cigre.org" class="resource-link" target="_blank">CIGRE</a>
+                    </div>
+
+                    <div class="card">
+                        <h3>🔧 Software & Tools to Master</h3>
+                        <div class="skill-grid" style="margin-top: 15px;">
+                            <div class="skill-item">AutoCAD Electrical</div>
+                            <div class="skill-item">ABB PCM600</div>
+                            <div class="skill-item">SEL AcSELerator</div>
+                            <div class="skill-item">Siemens DIGSI</div>
+                            <div class="skill-item">MS Project</div>
+                            <div class="skill-item">Visio</div>
+                            <div class="skill-item">ETAP / PSS</div>
+                            <div class="skill-item">IEC 61850 Tools</div>
+                        </div>
+                    </div>
+
+                    <div class="card">
+                        <h3>📰 Industry News & Updates</h3>
+                        <a href="https://www.aemo.com.au" class="resource-link" target="_blank">AEMO Website</a>
+                        <a href="https://www.tnsp.com.au" class="resource-link" target="_blank">TNSP Resources</a>
+                        <a href="https://spectrum.ieee.org" class="resource-link" target="_blank">IEEE Spectrum</a>
+                        <a href="https://www.power-grid.com" class="resource-link" target="_blank">Power Grid International</a>
+                    </div>
+                </div>
+
+                <div class="section">
+                    <h2>Career Tips</h2>
+                    <div class="card">
+                        <h3>🎯 Breaking Into the Field</h3>
+                        <ul class="requirements-list">
+                            <li>Start with electrical engineering fundamentals</li>
+                            <li>Gain hands-on experience with SCADA platforms (use trial versions)</li>
+                            <li>Learn AutoCAD and create sample electrical drawings</li>
+                            <li>Study Australian standards even before applying</li>
+                            <li>Build a portfolio of SCADA projects</li>
+                            <li>Network with professionals on LinkedIn</li>
+                            <li>Consider internships or junior positions first</li>
+                        </ul>
+                    </div>
+
+                    <div class="card">
+                        <h3>💼 Interview Preparation</h3>
+                        <ul class="requirements-list">
+                            <li>Prepare technical examples from past projects</li>
+                            <li>Understand TNSP and AEMO requirements thoroughly</li>
+                            <li>Be ready to discuss SCADA protocols in detail</li>
+                            <li>Show familiarity with Australian time zones and work culture</li>
+                            <li>Demonstrate project management capabilities</li>
+                            <li>Highlight remote work experience and discipline</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="section">
+                    <h2>Additional Resources</h2>
+                    <div class="highlight">
+                        <strong>🔍 Job Search Platforms:</strong><br>
+                        • LinkedIn Jobs<br>
+                        • Seek.com.au<br>
+                        • Indeed Australia<br>
+                        • OnlineJobs.ph (for remote positions)<br>
+                        • Engineering-specific job boards
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        function showTab(tabName) {
+            // Hide all tab contents
+            const tabContents = document.querySelectorAll('.tab-content');
+            tabContents.forEach(tab => tab.classList.remove('active'));
+
+            // Remove active class from all tabs
+            const tabs = document.querySelectorAll('.nav-tab');
+            tabs.forEach(tab => tab.classList.remove('active'));
+
+            // Show selected tab content
+            document.getElementById(tabName).classList.add('active');
+
+            // Add active class to clicked tab
+            event.target.classList.add('active');
+
+            // Scroll to top of content
+            window.scrollTo({ top: 0, behavior: 'smooth' });
+        }
+    </script>
+</body>
+</html>
